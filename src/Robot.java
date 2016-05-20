@@ -3,19 +3,21 @@
 public class Robot {
 	
 	int id;
- 
-	Robot robot[];
-	int i=0;
+ 	Point p;
 	
-	public Robot(Robot r[]){
-		this.id=++i;
-		robot=new Robot[r.length];
+	public Robot(Point a){
+		this.id++;
+		p = a;
+		
 	}
 	
-	public void ListenToMsg() {
+	public void getMsg() {
+		
 		
 	}
 	public void SendMsg() {
 		
 	}
+	
+	
 }

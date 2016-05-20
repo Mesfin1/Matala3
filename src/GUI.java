@@ -111,37 +111,51 @@ public class GUI extends javax.swing.JFrame {
 		JButton btnLeft = new JButton("\u2190");
 		btnLeft.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//point.MoveRobot();
+				try {
+					msgCla.MoveLeft();
+				} catch (BadLocationException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 
 		JButton btnRight = new JButton("\u2192");
 		btnRight.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				int x= msgCla.getX();
-		 
-				x+=5;
-				point.setX(x);	
 				try {
-					msgCla.sendMsg();
-				} catch (BadLocationException e) {
+					msgCla.MoveRight();
+				} catch (BadLocationException e1) {
 					// TODO Auto-generated catch block
-					e.printStackTrace();
+					e1.printStackTrace();
 				}
+			
 			}
 		});
 
 		JButton btnDown = new JButton("\u2193");
 		btnDown.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				try {
+					msgCla.MoveDown();
+				} catch (BadLocationException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+
+
 			}
 		});
 
 		JButton btnUp = new JButton("\u2191");
 		btnUp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//	point.MoveRobot();
+				try {
+					msgCla.MoveUp();
+				} catch (BadLocationException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 
@@ -153,104 +167,104 @@ public class GUI extends javax.swing.JFrame {
 		JLabel lblNewLabel = new JLabel("msg");
 
 		lblFrom = new JLabel("From");
-		
-		 
+
+
 
 
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
 		layout.setHorizontalGroup(
-			layout.createParallelGroup(Alignment.TRAILING)
+				layout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(layout.createSequentialGroup()
-					.addContainerGap()
-					.addGroup(layout.createParallelGroup(Alignment.LEADING)
-						.addGroup(layout.createSequentialGroup()
-							.addGroup(layout.createParallelGroup(Alignment.LEADING)
-								.addComponent(btnUp, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE)
-								.addComponent(btnLeft))
-							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-							.addGroup(layout.createParallelGroup(Alignment.LEADING)
-								.addComponent(jLabel1)
+						.addContainerGap()
+						.addGroup(layout.createParallelGroup(Alignment.LEADING)
 								.addGroup(layout.createSequentialGroup()
-									.addGroup(layout.createParallelGroup(Alignment.LEADING)
-										.addComponent(lblFrom, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
-										.addGroup(layout.createSequentialGroup()
-											.addComponent(lblLeft, GroupLayout.PREFERRED_SIZE, 17, GroupLayout.PREFERRED_SIZE)
-											.addPreferredGap(ComponentPlacement.RELATED)
-											.addGroup(layout.createParallelGroup(Alignment.LEADING)
-												.addComponent(btnDown, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE)
-												.addComponent(btnRight))))
-									.addGroup(layout.createParallelGroup(Alignment.LEADING)
-										.addGroup(layout.createSequentialGroup()
-											.addGap(32)
-											.addComponent(txtMsg, GroupLayout.PREFERRED_SIZE, 111, GroupLayout.PREFERRED_SIZE)
-											.addGap(33)
-											.addComponent(btnConnect))
-										.addGroup(layout.createSequentialGroup()
-											.addGap(60)
-											.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)))))
-							.addGap(68))
-						.addGroup(layout.createSequentialGroup()
-							.addComponent(txtFrom, GroupLayout.PREFERRED_SIZE, 101, GroupLayout.PREFERRED_SIZE)
-							.addGap(311)))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(txtPoint, GroupLayout.PREFERRED_SIZE, 156, GroupLayout.PREFERRED_SIZE)
-					.addGap(33)
-					.addGroup(layout.createParallelGroup(Alignment.LEADING)
-						.addGroup(layout.createSequentialGroup()
-							.addComponent(panel, GroupLayout.PREFERRED_SIZE, 146, GroupLayout.PREFERRED_SIZE)
-							.addGap(31)
-							.addComponent(txtLog, GroupLayout.PREFERRED_SIZE, 227, GroupLayout.PREFERRED_SIZE))
-						.addGroup(layout.createSequentialGroup()
-							.addComponent(lblRobot, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
-							.addGap(204)
-							.addComponent(jLabel13, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)))
-					.addGap(342))
-		);
+										.addGroup(layout.createParallelGroup(Alignment.LEADING)
+												.addComponent(btnUp, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE)
+												.addComponent(btnLeft))
+												.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+												.addGroup(layout.createParallelGroup(Alignment.LEADING)
+														.addComponent(jLabel1)
+														.addGroup(layout.createSequentialGroup()
+																.addGroup(layout.createParallelGroup(Alignment.LEADING)
+																		.addComponent(lblFrom, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
+																		.addGroup(layout.createSequentialGroup()
+																				.addComponent(lblLeft, GroupLayout.PREFERRED_SIZE, 17, GroupLayout.PREFERRED_SIZE)
+																				.addPreferredGap(ComponentPlacement.RELATED)
+																				.addGroup(layout.createParallelGroup(Alignment.LEADING)
+																						.addComponent(btnDown, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE)
+																						.addComponent(btnRight))))
+																						.addGroup(layout.createParallelGroup(Alignment.LEADING)
+																								.addGroup(layout.createSequentialGroup()
+																										.addGap(32)
+																										.addComponent(txtMsg, GroupLayout.PREFERRED_SIZE, 111, GroupLayout.PREFERRED_SIZE)
+																										.addGap(33)
+																										.addComponent(btnConnect))
+																										.addGroup(layout.createSequentialGroup()
+																												.addGap(60)
+																												.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)))))
+																												.addGap(68))
+																												.addGroup(layout.createSequentialGroup()
+																														.addComponent(txtFrom, GroupLayout.PREFERRED_SIZE, 101, GroupLayout.PREFERRED_SIZE)
+																														.addGap(311)))
+																														.addPreferredGap(ComponentPlacement.RELATED)
+																														.addComponent(txtPoint, GroupLayout.PREFERRED_SIZE, 156, GroupLayout.PREFERRED_SIZE)
+																														.addGap(33)
+																														.addGroup(layout.createParallelGroup(Alignment.LEADING)
+																																.addGroup(layout.createSequentialGroup()
+																																		.addComponent(panel, GroupLayout.PREFERRED_SIZE, 146, GroupLayout.PREFERRED_SIZE)
+																																		.addGap(31)
+																																		.addComponent(txtLog, GroupLayout.PREFERRED_SIZE, 227, GroupLayout.PREFERRED_SIZE))
+																																		.addGroup(layout.createSequentialGroup()
+																																				.addComponent(lblRobot, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+																																				.addGap(204)
+																																				.addComponent(jLabel13, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)))
+																																				.addGap(342))
+				);
 		layout.setVerticalGroup(
-			layout.createParallelGroup(Alignment.TRAILING)
+				layout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(layout.createSequentialGroup()
-					.addGap(11)
-					.addGroup(layout.createParallelGroup(Alignment.TRAILING)
-						.addGroup(layout.createSequentialGroup()
-							.addComponent(jLabel1)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(lblRobot))
-						.addComponent(jLabel13))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(layout.createParallelGroup(Alignment.LEADING)
-						.addGroup(layout.createSequentialGroup()
-							.addGroup(layout.createParallelGroup(Alignment.TRAILING)
-								.addComponent(panel, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
-								.addComponent(txtLog, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addContainerGap())
-						.addGroup(layout.createSequentialGroup()
-							.addGroup(layout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(lblFrom)
-								.addComponent(lblNewLabel))
-							.addGap(1)
-							.addGroup(layout.createParallelGroup(Alignment.LEADING)
-								.addComponent(txtPoint, GroupLayout.PREFERRED_SIZE, 117, GroupLayout.PREFERRED_SIZE)
+						.addGap(11)
+						.addGroup(layout.createParallelGroup(Alignment.TRAILING)
 								.addGroup(layout.createSequentialGroup()
-									.addComponent(txtFrom, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
-									.addGroup(layout.createParallelGroup(Alignment.LEADING)
-										.addGroup(layout.createSequentialGroup()
-											.addPreferredGap(ComponentPlacement.RELATED)
-											.addGroup(layout.createParallelGroup(Alignment.LEADING)
+										.addComponent(jLabel1)
+										.addPreferredGap(ComponentPlacement.RELATED)
+										.addComponent(lblRobot))
+										.addComponent(jLabel13))
+										.addPreferredGap(ComponentPlacement.UNRELATED)
+										.addGroup(layout.createParallelGroup(Alignment.LEADING)
 												.addGroup(layout.createSequentialGroup()
-													.addComponent(btnUp)
-													.addPreferredGap(ComponentPlacement.RELATED)
-													.addGroup(layout.createParallelGroup(Alignment.BASELINE)
-														.addComponent(btnLeft)
-														.addComponent(btnRight)))
-												.addComponent(btnDown)))
-										.addGroup(layout.createSequentialGroup()
-											.addGap(20)
-											.addComponent(lblLeft))))
-								.addComponent(txtMsg, GroupLayout.PREFERRED_SIZE, 87, GroupLayout.PREFERRED_SIZE)
-								.addComponent(btnConnect, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE))
-							.addGap(21))))
-		);
+														.addGroup(layout.createParallelGroup(Alignment.TRAILING)
+																.addComponent(panel, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+																.addComponent(txtLog, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+																.addContainerGap())
+																.addGroup(layout.createSequentialGroup()
+																		.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+																				.addComponent(lblFrom)
+																				.addComponent(lblNewLabel))
+																				.addGap(1)
+																				.addGroup(layout.createParallelGroup(Alignment.LEADING)
+																						.addComponent(txtPoint, GroupLayout.PREFERRED_SIZE, 117, GroupLayout.PREFERRED_SIZE)
+																						.addGroup(layout.createSequentialGroup()
+																								.addComponent(txtFrom, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+																								.addGroup(layout.createParallelGroup(Alignment.LEADING)
+																										.addGroup(layout.createSequentialGroup()
+																												.addPreferredGap(ComponentPlacement.RELATED)
+																												.addGroup(layout.createParallelGroup(Alignment.LEADING)
+																														.addGroup(layout.createSequentialGroup()
+																																.addComponent(btnUp)
+																																.addPreferredGap(ComponentPlacement.RELATED)
+																																.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+																																		.addComponent(btnLeft)
+																																		.addComponent(btnRight)))
+																																		.addComponent(btnDown)))
+																																		.addGroup(layout.createSequentialGroup()
+																																				.addGap(20)
+																																				.addComponent(lblLeft))))
+																																				.addComponent(txtMsg, GroupLayout.PREFERRED_SIZE, 87, GroupLayout.PREFERRED_SIZE)
+																																				.addComponent(btnConnect, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE))
+																																				.addGap(21))))
+				);
 		panel.setBackground(Color.WHITE);
 		getContentPane().setLayout(layout);
 
